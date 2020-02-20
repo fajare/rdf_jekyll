@@ -1,0 +1,9 @@
+baseurl: ""
+url: "http://example.org"
+
+plugins:
+   - jekyll-rdf
+
+jekyll_rdf:
+	path: "_data/tweets.ttl"
+	default_template: "default"
