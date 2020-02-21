@@ -2,4 +2,20 @@
 rdf_prefix_path: "_data/prefixes.sparql"
 ---
 
-<h1>{{ page.rdf | rdf_property: "sioc:discussion" }}<h1>
+<h1>{{ page.rdf | rdf_property: "sioc:has_discussion" }}<h1>
+{{ page.rdf }}
+<dl>
+  <dt>Creator:</dt>
+  <dd>{{ page.rdf | rdf_property: "sioc:has_creator" }}</dd>
+</dl>
+
+<h2>Discussions</h2>
+<ul>
+  {% capture discussions_query %}
+    SELECT ?has_discussion 
+    WHERE {<http://example.org/resource/elonmusk/tweet/Row47> <http://rdfs.org/sioc/ns#has_discussion> ?has_discussion}
+  {% endcapture %}
+  {% assign discussions = page.rdf | sparql_query: discussions_query%}
+  {% for row in discussions%}
+    <li><a href="{{row.has_discussion.page_url}}">{{row.has_discussion | rdf_property: "sioc:has_discussion"}}</a></li>
+  {% endfor %}
