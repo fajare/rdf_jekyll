@@ -9,4 +9,4 @@ jekyll_rdf:
 	default_template: "default"
 	class_template_mappings: 
 		"http://rdfg.org/sioc/ns#MicroblogPost": "content"
-		"http://rdfg.org/sioc/ns#MicroblogPost": "contentquery"
+		"http://rdfg.org/sioc/ns#MicroblogPost": "discussion"
