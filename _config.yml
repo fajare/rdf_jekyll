@@ -7,3 +7,5 @@ plugins:
 jekyll_rdf:
 	path: "_data/tweets.ttl"
 	default_template: "default"
+	class_template_mappings: 
+		"http://rdfs.org/sioc/ns#MicroblogPost": "content"

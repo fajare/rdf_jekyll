@@ -1,0 +1,13 @@
+---
+---
+
+<h1>{{ page.rdf }}</h1>
+
+<h2>Tweets</h2>
+<ul>
+	{% assign contents = page.rdf | rdf_property: "<http://rdfs.org/sioc/ns#content>", nil, true %}
+	{% for content in contents %}
+		<li><a href="{{ content.page_url }}">{{ member | rdf_property: "<http://rdfs.org/sioc/ns#content>"}}</a></li>
+	{% endfor %}
+</ul>
+	
