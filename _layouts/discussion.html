@@ -19,3 +19,4 @@ rdf_prefix_path: "_data/prefixes.sparql"
   {% for row in discussions%}
     <li><a href="{{row.has_discussion.page_url}}">{{row.has_discussion | rdf_property: "sioc:has_discussion"}}</a></li>
   {% endfor %}
+</ul>
